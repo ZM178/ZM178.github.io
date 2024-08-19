@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    background-color: #FFFFFF;
+    background-color: #4CAF50;
     color: black;
     padding: 20px;
     text-align: center;
@@ -78,7 +78,6 @@ h1 {
 }
 
 .button:hover {
-    background-color: #45a049;
 }
 
 .navbar {

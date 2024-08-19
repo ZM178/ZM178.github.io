@@ -4,6 +4,14 @@ body {
     background-attachment: fixed
     background-repeat: no-repeat;
     background-position: center;
+    color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: black;
+    }
 }
 
 @font-face {
@@ -13,11 +21,14 @@ body {
 
 body {
     font-family: 'Minecraft', sans-serif;
+    color: white;
 }
 
 header {
-    background-color: #4CAF50;
-    color: black;
+    background-color: #004d00;
+    border: 5px solid #006400;
+    border-radius: 10px;
+    color: white;
     padding: 20px;
     text-align: center;
 }
@@ -94,6 +105,7 @@ h1 {
 .logo {
     display: flex;
     align-items: center;
+    
 }
 
 .logo-image {
@@ -106,6 +118,7 @@ h1 {
 .profile-menu {
     position: relative;
     display: inline-block;
+    
 }
 
 .profile-image {
@@ -136,8 +149,9 @@ h1 {
 }
 
 .dropdown-item:hover {
-    background-color: #575757;
-    border-radius: 5px;
+    background-color: #333333;
+    border: 5px solid #808080;
+    border-radius: 10px;
 }
 
 .show {
@@ -153,8 +167,8 @@ h1 {
 }
 
 .dropdown-item .icon {
-    width: 20px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
-    height: 20px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
+    width: 30px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
+    height: 30px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
     margin-right: 8px; /* Jarak antara gambar dan teks */
 }
 

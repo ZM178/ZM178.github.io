@@ -1,84 +1,59 @@
+/* Pengaturan dasar untuk body agar berada tepat di tengah layar */
+html, body {
+    height: 100%; /* Memastikan html dan body mengambil 100% tinggi viewport */
+    margin: 0; /* Menghapus margin default */
+    font-family: 'Minecraft', sans-serif;
+}
+
 body {
     background-image: url('background.jpg');
     background-size: cover;
-    background-attachment: fixed
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
-    color: white;
+    display: flex; /* Menggunakan Flexbox */
+    justify-content: center; /* Mengatur konten agar tepat di tengah secara horizontal */
+    align-items: center; /* Mengatur konten agar tepat di tengah secara vertikal */
+    width: 100%; /* Membuat lebar body sesuai dengan lebar viewport */
+    height: auto; /* Mengatur tinggi body secara otomatis */
+    margin: 0; /* Menghapus margin default */
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: black;
-        color: black;
-    }
-}
-
+/* Custom font */
 @font-face {
     font-family: 'Minecraft';
     src: url('fonts/Minecraft.ttf') format('truetype');
 }
 
-body {
-    font-family: 'Minecraft', sans-serif;
-    color: white;
-}
-
-header {
-    background-color: #004d00;
-    border: 5px solid #006400;
-    border-radius: 10px;
-    color: white;
+/* Style untuk elemen .body */
+.body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr; /* Layout default untuk mobile (1 kolom) */
+    gap: 20px;
     padding: 20px;
-    text-align: center;
-}
-
-h1 {
-    margin: 0;
-}
-
-.addon-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 30px;
+    position: center;
 }
 
 .addon {
     background-color: black;
     border: 5px solid #808080;
     border-radius: 10px;
-    margin-bottom: 20px;
     padding: 15px;
-    width: 300px;
+    width: 100%; /* Width default untuk mobile */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
-.addon:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #333333;
-    border: 5px solid #808080;
-    border-radius: 10px;
-}
-
-.addon img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.addon h2 {
-    font-size: 1.5em;
-    margin-top: 0;
+/* Style untuk judul */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
     color: #FFFFFF;
+    text-align: center; /* Agar judul di tengah */
 }
 
-.addon p {
-    margin-bottom: 15px;
-    line-height: 1.6;
-    color: #FFFFFF;
-}
-
+/* Style untuk tombol */
 .button {
     display: inline-block;
     background-color: #4CAF50;
@@ -90,93 +65,55 @@ h1 {
     text-align: center;
 }
 
-.button:hover {
-    background-color: #808080;
+/* Style untuk paragraf */
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #FFFFFF;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+/* Style untuk gambar */
+.image {
+    width: 100%;
+    height: auto;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    
-}
-
-.logo-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.profile-menu {
-    position: relative;
-    display: inline-block;
-    
-}
-
-.profile-image {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: #333;
-    min-width: 150px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 5px;
-}
-
-.dropdown-item {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s;
-}
-
-.dropdown-item:hover {
-    background-color: #333333;
-    border: 5px solid #808080;
-    border-radius: 10px;
-}
-
-.show {
-    display: block;
-}
-
-.dropdown-item {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-    padding: 8px;
-}
-
-.dropdown-item .icon {
-    width: 30px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
-    height: 30px; /* Sesuaikan ukuran gambar sesuai kebutuhan */
-    margin-right: 8px; /* Jarak antara gambar dan teks */
-}
-
-
-footer {
-    background-color: #333;
-    color: white;
+/* Style untuk caption gambar */
+.image-caption {
+    font-style: italic;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    color: gray;
+}
+
+/* Media Query untuk tampilan desktop */
+@media (min-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px 20px; /* Menambah padding untuk tampilan yang lebih indah */
+    }
+
+    .body {
+        max-width: 1200px; /* Maksimal lebar untuk body di desktop */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Mengatur layout grid yang indah */
+        gap: 30px; /* Menambah gap antar elemen untuk tampilan desktop */
+    }
+
+    .addon {
+        width: auto; /* Menghapus batas lebar untuk tampilan desktop */
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 3em; /* Membuat judul lebih besar di desktop */
+    }
+
+    .button {
+        padding: 15px 30px;
+        margin: 10px 0;
+        width: auto; /* Mengatur lebar tombol sesuai konten di desktop */
+    }
 }

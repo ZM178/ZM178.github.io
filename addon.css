@@ -55,14 +55,10 @@ h1 {
 
 /* Style untuk tombol */
 .button {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: black;
-    padding: 10px 20px;
-    margin: 0 5px 10px 0;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
+        padding: 20px 40px; /* Membuat tombol lebih besar di desktop */
+        font-size: 1.2em; /* Memperbesar font size tombol di desktop */
+        margin: 10px 0;
+        width: auto; /* Mengatur lebar tombol sesuai konten di desktop */
 }
 
 /* Style untuk paragraf */

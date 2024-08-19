@@ -5,6 +5,8 @@ html, body {
     font-family: 'Minecraft', sans-serif;
 }
 
+
+
 body {
     background-image: url('background.jpg');
     background-size: cover;
@@ -24,6 +26,21 @@ body {
     font-family: 'Minecraft';
     src: url('fonts/Minecraft.ttf') format('truetype');
 }
+
+h1 {
+    font-size: 2em; /* Ukuran font judul */
+    margin: 0; /* Jarak atas dan bawah judul */
+    color: #FFFFFF; /* Warna teks judul */
+    text-align: center; /* Menyusun teks di tengah secara horizontal */
+    background-color: #004d00; /* Warna latar belakang hijau tua */
+    border: 3px solid #66ff66; /* Border hijau muda */
+    padding: 20px; /* Padding untuk memberikan jarak antara teks dan border */
+    border-radius: 5px; /* Membulatkan sudut border */
+    box-sizing: border-box; /* Memastikan padding dan border termasuk dalam ukuran total */
+}
+
+
+
 
 /* Style untuk elemen .body */
 .body {
@@ -55,33 +72,70 @@ h1 {
 
 /* Style untuk tombol */
 .button {
-        padding: 20px 40px; /* Membuat tombol lebih besar di desktop */
-        font-size: 1.2em; /* Memperbesar font size tombol di desktop */
-        margin: 10px 0;
-        width: auto; /* Mengatur lebar tombol sesuai konten di desktop */
+    display: inline-block;
+    background-color: #4CAF50;
+    color: black;
+    padding: 10px 20px;
+    margin: 0 5px 10px 0;
+    height : auto;
+    width: auto;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
 }
 
-/* Style untuk paragraf */
-p {
-    margin-bottom: 20px;
-    text-align: justify;
-    color: #FFFFFF;
+p:first-of-type {
+    margin-bottom: 10%; /* Atur jarak sesuai keinginan */
 }
+
+p {
+    display: block; /* Memastikan paragraf terlihat */
+    visibility: visible; /* Memastikan paragraf tidak tersembunyi */
+    color: #FFFFFF; /* Pastikan warna teks kontras dengan background */
+}
+
 
 /* Style untuk gambar */
 .image {
-    width: 100%;
-    height: auto;
+    border: #FFFFFF;
+    display: block; /* Menampilkan gambar sebagai elemen blok */
+    width: 100%; /* Mengatur gambar agar sesuai dengan lebar kontainer */
+    height: auto; /* Menjaga proporsi gambar */
+    margin-top: 30px;
 }
 
 /* Style untuk caption gambar */
 .image-caption {
-    font-style: italic;
-    text-align: center;
-    margin-top: -15px;
-    margin-bottom: 30px;
-    color: gray;
+    text-align: left; /* Menempatkan teks di tengah */
+    font-size: 1.5em; /* Ukuran font */
+    margin-top: 0; /* Menambahkan jarak antara gambar dan teks */
+    color: white; /* Warna teks */
+    background-color: rgba(0, 0, 0, 0.7); /* Background hitam transparan */
+    padding: 5px; /* Padding untuk teks */
+    border-radius: 5px; /* Membulatkan sudut background */
+    z-index: 10; /* Pastikan teks berada di depan */
+    position: relative; /* Pastikan tidak dipengaruhi oleh elemen lain */
 }
+
+
+
+.text-below {
+    text-align: left; /* Menempatkan teks di tengah */
+    font-size: 1.5em; /* Ukuran font */
+    margin-top: 10px; /* Menambahkan jarak antara gambar dan teks */
+    margin-bottom:40px;
+    margin-right :80px;
+    color: white; /* Warna teks */
+    background-color: rgba(0, 0, 0, 0.7); /* Background hitam transparan */
+    padding: 5px; /* Padding untuk teks */
+    border-radius: 5px; /* Membulatkan sudut background */
+    z-index: 10; /* Pastikan teks berada di depan */
+    position: relative; /* Pastikan tidak dipengaruhi oleh elemen lain */
+}
+
+
+
+
 
 /* Media Query untuk tampilan desktop */
 @media (min-width: 768px) {
@@ -107,9 +161,27 @@ p {
         font-size: 3em; /* Membuat judul lebih besar di desktop */
     }
 
-    .button {
-        padding: 15px 30px;
-        margin: 10px 0;
-        width: auto; /* Mengatur lebar tombol sesuai konten di desktop */
+.button {
+    font-size: 2em; /* Memperbesar ukuran font untuk desktop */
+    width: 93%; /* Lebar tombol */
+    height: 80px; /* Tinggi tombol */
+    display: flex; /* Menggunakan Flexbox */
+    justify-content: center; /* Menyusun teks di tengah secara horizontal */
+    align-items: center; /* Menyusun teks di tengah secara vertikal */
+    text-align: center; /* Menjaga teks di tengah */
+}
+.text-below {
+        font-size: 2em; /* Ukuran font lebih besar di desktop */
+        margin-top: 15px; /* Sedikit lebih banyak jarak di desktop */
     }
+    p {
+        margin-bottom: 30px; /* Tambahkan lebih banyak jarak bawah */
+        font-size: 1.2em; /* Perbesar ukuran font untuk keterbacaan lebih baik */
+        line-height: 1.6; /* Tambahkan jarak antar baris untuk membuat teks lebih mudah dibaca */
+        max-width: 800px; /* Batasi lebar paragraf agar lebih mudah dibaca di layar lebar */
+        margin-left: auto; /* Sentralisasi paragraf */
+        margin-right: auto; /* Sentralisasi paragraf */
+    }
+}
+
 }

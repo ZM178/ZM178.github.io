@@ -9,8 +9,8 @@ body {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: white;
-        color: white;
+        background-color: black;
+        color: black;
     }
 }
 
@@ -33,6 +33,11 @@ header {
     text-align: center;
 }
 
+.profile-image:active {
+transform: scale(1.4); /* Membesarkan tombol sedikit saat hover */
+}
+
+
 h1 {
     margin: 0;
 }
@@ -52,6 +57,7 @@ h1 {
     padding: 15px;
     width: 300px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-out;
 }
 
 .addon:hover {
@@ -59,6 +65,19 @@ h1 {
     background-color: #333333;
     border: 5px solid #808080;
     border-radius: 10px;
+    transform: scale(1.1); /* Zoom gambar saat hover */
+}
+
+.addon.hovered {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #333333;
+    border: 5px solid #808080;
+    border-radius: 10px;
+    transform: scale(1.1); /* Zoom gambar saat hover */
+}
+
+.addon {
+    transition: transform 0.5s ease-out;
 }
 
 .addon img {
@@ -88,10 +107,13 @@ h1 {
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Menambahkan transisi untuk perubahan warna dan ukuran */
 }
 
 .button:hover {
     background-color: #808080;
+    transform: scale(1.05); /* Membesarkan tombol sedikit saat hover */
+        
 }
 
 .navbar {
@@ -101,6 +123,7 @@ h1 {
     padding: 15px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 
 .logo {
     display: flex;
@@ -118,7 +141,6 @@ h1 {
 .profile-menu {
     position: relative;
     display: inline-block;
-    
 }
 
 .profile-image {
@@ -138,7 +160,32 @@ h1 {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 5px;
+    animation: slideIn 0.4s ease-out; /* Menambahkan animasi saat tampil */
 }
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi untuk menyembunyikan dropdown menu */
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
 
 .dropdown-item {
     color: black;

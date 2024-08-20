@@ -102,6 +102,7 @@ p {
     width: 100%; /* Mengatur gambar agar sesuai dengan lebar kontainer */
     height: auto; /* Menjaga proporsi gambar */
     margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 /* Style untuk caption gambar */
@@ -166,6 +167,7 @@ p {
     width: 93%; /* Lebar tombol */
     height: 80px; /* Tinggi tombol */
     display: flex; /* Menggunakan Flexbox */
+    margin-bottom: 50px;
     justify-content: center; /* Menyusun teks di tengah secara horizontal */
     align-items: center; /* Menyusun teks di tengah secara vertikal */
     text-align: center; /* Menjaga teks di tengah */
